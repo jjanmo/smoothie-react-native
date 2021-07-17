@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import {View} from 'react-native';
 
 const Container = styled.View`
   flex: 1;
@@ -17,21 +18,29 @@ const TodoText = styled.Text`
   font-size: 16px;
   flex: 1;
   padding-left: 15px;
+  text-decoration: ${props => (props.done ? 'line-through' : 'none')};
 `;
 const ButtonContainer = styled.View`
   flex-direction: row;
   justify-content: space-around;
 `;
 
-const Todo = ({title, done}) => {
+const Todo = ({id, title, done, onPressDone, onPressDelete}) => {
+  console.log('📌 todo', id, title, done);
   return (
     <Container>
-      <TodoText textDecorationLine={done ? 'line-through' : 'none'}>
-        {title}
-      </TodoText>
+      <TodoText done={done}>{title}</TodoText>
       <ButtonContainer>
-        <Button bgColor={'#a9b3ff'} text={'done'} />
-        <Button bgColor={'tomato'} text={'del'} />
+        <Button
+          bgColor={'#a9b3ff'}
+          text={'done'}
+          onPress={() => onPressDone(id)}
+        />
+        <Button
+          bgColor={'tomato'}
+          text={'del'}
+          onPress={() => onPressDelete(id)}
+        />
       </ButtonContainer>
     </Container>
   );

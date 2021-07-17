@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Text} from 'react-native';
 import styled from 'styled-components/native';
 import CircleButton from '../components/CircleButton';
@@ -25,19 +25,15 @@ const FooterContainer = styled.View`
 `;
 
 const TodoListScreen = () => {
+  const [todos, setTodos] = useState(data);
+  console.log('⭐️', todos);
   return (
     <Wrapper>
       <HeaderContainer>
         <Header />
       </HeaderContainer>
-      <TodoListContainer data={data}>
-        {data.length > 0 ? (
-          <TodoList data={data} />
-        ) : (
-          <Text style={{color: 'white', fontSize: 16}}>
-            하단에 '+' 버튼을 눌러 새로운 할일을 등록해 보세요.
-          </Text>
-        )}
+      <TodoListContainer>
+        <TodoList todos={todos} updateFunction={setTodos} />
       </TodoListContainer>
       <FooterContainer>
         <CircleButton text={'+'} />
