@@ -1,12 +1,9 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import TodoListScreen from './screens/TodoListScreen';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <Text>Hello World</Text>
-    </SafeAreaView>
-  );
+  return <TodoListScreen />;
 };
 
 export default App;
