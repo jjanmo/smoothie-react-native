@@ -15,16 +15,10 @@ const SText = styled.Text`
   color: white;
 `;
 
-const CircleButton = ({text}) => {
-  const onPress = () => {
-    console.log('click 🔥');
-  };
-
-  return (
-    <Button activeOpacity={0.7} onPress={onPress}>
-      <SText>{text}</SText>
-    </Button>
-  );
-};
+const CircleButton = ({onPress}) => (
+  <Button activeOpacity={0.7} onPress={onPress}>
+    <SText>+</SText>
+  </Button>
+);
 
 export default CircleButton;

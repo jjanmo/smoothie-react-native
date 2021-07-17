@@ -1,15 +1,14 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
 import styled from 'styled-components';
 
 const Container = styled.View`
-  flex: 0.8;
   justify-content: center;
   align-items: center;
   width: 94%;
   background-color: #7d798b;
-  margin: auto;
   border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px 0;
 `;
 const Title = styled.Text`
   font-size: 20px;
@@ -23,11 +22,13 @@ const Notification = styled.Text`
   color: white;
 `;
 
-const Header = () => {
+const Header = ({todos}) => {
+  const doneTodo = todos.filter(todo => !todo.done).length;
+
   return (
     <Container>
       <Title>What is my main focus for today?</Title>
-      <Notification>5 / 10</Notification>
+      <Notification>{`${doneTodo} / ${todos.length}`}</Notification>
     </Container>
   );
 };
