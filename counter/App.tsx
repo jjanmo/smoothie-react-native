@@ -1,12 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import styled from 'styled-components';
+import Counter from './src/Counter';
 
 function App() {
   return (
-    <View>
-      <Text>Hello World</Text>
-    </View>
+    <SafeView>
+      <Counter />
+    </SafeView>
   );
 }
 
 export default App;
+
+const SafeView = styled(SafeAreaView)`
+  flex: 1;
+`;
