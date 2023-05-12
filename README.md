@@ -6,7 +6,7 @@
 
 ## List
 
-- [ ] CounterApp(Chapter5)
+- [x] CounterApp(Chapter5)
 
 - [ ] TodoApp(Chapter6)
 
