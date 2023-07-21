@@ -8,6 +8,8 @@
 
 - [x] CounterApp(Chapter5)
 
+  > `counter` directory
+
 - [ ] TodoApp(Chapter6)
 
 - [ ] WeatherApp(Chapter7)
